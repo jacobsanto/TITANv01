@@ -65,7 +65,13 @@
     "all": "Όλα",
     "select": "Επιλογή",
     "clear": "Καθαρισμός",
-    "apply_filters": "Εφαρμογή Φίλτρων"
+    "apply_filters": "Εφαρμογή Φίλτρων",
+    "fixed": "Διορθώθηκε",
+    "ok": "OK",
+    "files": "Αρχεία",
+    "companies": "Εταιρείες",
+    "no_companies_found": "Δεν βρέθηκαν εταιρείες.",
+    "company_name": "Όνομα Εταιρείας"
   },
   "dashboard": {
     "title": "Πίνακας Ελέγχου",
@@ -201,7 +207,10 @@
     "failed": "Απέτυχε",
     "critical": "Κρίσιμο",
     "warning": "Προειδοποίηση",
-    "info": "Πληροφορία"
+    "info": "Πληροφορία",
+    "operational": "Λειτουργικό",
+    "issues_detected": "Εντοπίστηκαν Προβλήματα",
+    "degraded": "Υποβαθμισμένο"
   },
   "reports": {
     "title": "Αναφορές",
@@ -334,7 +343,25 @@
     "per_company": "Ανά Εταιρεία",
     "verification_status": "Κατάσταση Επαλήθευσης",
     "audit_results": "Αποτελέσματα Ελέγχου",
-    "misfiled": "Λανθασμένη Αρχειοθέτηση"
+    "misfiled": "Λανθασμένη Αρχειοθέτηση",
+    "audit_in_progress": "Έλεγχος Drive...",
+    "no_issues": "Δεν βρέθηκαν προβλήματα. Το Drive είναι σε καλή κατάσταση.",
+    "misfiled_description": "Βρίσκει τιμολόγια που έχουν αρχειοθετηθεί σε λάθος φάκελο και τα μεταφέρει στη σωστή τοποθεσία.",
+    "verify_description": "Ελέγχει ότι κάθε εταιρεία έχει τους σωστούς φακέλους Drive και τα αρχεία είναι προσβάσιμα.",
+    "invoices_checked": "τιμολόγια ελέγχθηκαν",
+    "misfiled_all_correct": "Όλα τα τιμολόγια είναι σωστά αρχειοθετημένα.",
+    "current_path": "Τρέχουσα Διαδρομή",
+    "expected_path": "Αναμενόμενη Διαδρομή",
+    "verify_missing_folder": "Λείπει ο φάκελος",
+    "verify_missing_files": "Λείπουν αρχεία",
+    "verify_permission_error": "Σφάλμα άδειας",
+    "verify_companies_ok": "εταιρείες OK",
+    "verify_files_ok": "αρχεία OK",
+    "verify_all_ok": "Όλες οι εταιρείες έχουν σωστή δομή φακέλων.",
+    "verifying": "Επαλήθευση αρχείων εταιρειών...",
+    "verify_issues": "Προβλήματα",
+    "verify_companies_with_issues": "εταιρεία/ες με προβλήματα",
+    "critical_issues": "κρίσιμα προβλήματα"
   },
   "profile": {
     "title": "Προφίλ",
