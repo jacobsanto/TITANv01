@@ -1,3 +1,7 @@
+export const dynamic = 'force-dynamic'
+
+import { ProfileView } from '@/components/profile/ProfileView'
+
 export default function ProfilePage() {
-  return null
+  return <ProfileView />
 }

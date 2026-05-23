@@ -332,7 +332,9 @@
     "fix": "Fix",
     "fix_all": "Fix All",
     "per_company": "Per Company",
-    "verification_status": "Verification Status"
+    "verification_status": "Verification Status",
+    "audit_results": "Audit Results",
+    "misfiled": "Misfiled"
   },
   "profile": {
     "title": "Profile",
