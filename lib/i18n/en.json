@@ -65,7 +65,13 @@
     "all": "All",
     "select": "Select",
     "clear": "Clear",
-    "apply_filters": "Apply Filters"
+    "apply_filters": "Apply Filters",
+    "fixed": "Fixed",
+    "ok": "OK",
+    "files": "Files",
+    "companies": "Companies",
+    "no_companies_found": "No companies found.",
+    "company_name": "Company Name"
   },
   "dashboard": {
     "title": "Dashboard",
@@ -201,7 +207,10 @@
     "failed": "Failed",
     "critical": "Critical",
     "warning": "Warning",
-    "info": "Info"
+    "info": "Info",
+    "operational": "Operational",
+    "issues_detected": "Issues Detected",
+    "degraded": "Degraded"
   },
   "reports": {
     "title": "Reports",
@@ -334,7 +343,25 @@
     "per_company": "Per Company",
     "verification_status": "Verification Status",
     "audit_results": "Audit Results",
-    "misfiled": "Misfiled"
+    "misfiled": "Misfiled",
+    "audit_in_progress": "Auditing Drive...",
+    "no_issues": "No issues found. Drive is in good health.",
+    "misfiled_description": "Finds invoices filed in the wrong folder and moves them to the correct location.",
+    "verify_description": "Checks that every company has the correct Drive folders and files are accessible.",
+    "invoices_checked": "invoices checked",
+    "misfiled_all_correct": "All invoices are correctly filed.",
+    "current_path": "Current Path",
+    "expected_path": "Expected Path",
+    "verify_missing_folder": "Missing folder",
+    "verify_missing_files": "Missing files",
+    "verify_permission_error": "Permission error",
+    "verify_companies_ok": "companies OK",
+    "verify_files_ok": "files OK",
+    "verify_all_ok": "All companies have the correct folder structure.",
+    "verifying": "Verifying company files...",
+    "verify_issues": "Issues",
+    "verify_companies_with_issues": "company/ies with issues",
+    "critical_issues": "critical issues"
   },
   "profile": {
     "title": "Profile",

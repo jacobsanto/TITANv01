@@ -110,7 +110,7 @@ export function InvoiceTable({ orgId, setupId, companyId }: InvoiceTableProps) {
         <span className="text-small text-fg-tertiary ml-auto">{total.toLocaleString('el-GR')} {t('dashboard.invoices').toLowerCase()}</span>
       </div>
 
-      <div className="rounded-xl border border-border overflow-hidden bg-bg-surface shadow-sm">
+      <div className="rounded-xl border border-border overflow-x-auto bg-bg-surface shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full text-small">
             <thead>

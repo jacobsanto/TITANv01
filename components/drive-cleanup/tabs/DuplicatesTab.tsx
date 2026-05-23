@@ -119,7 +119,7 @@ export function DuplicatesTab({ orgId, setupId, scanResult, scanning }: Duplicat
           Δεν βρέθηκαν διπλότυπα.
         </div>
       ) : (
-        <div className="rounded-xl border border-border overflow-hidden bg-bg-surface shadow-sm">
+        <div className="rounded-xl border border-border overflow-x-auto bg-bg-surface shadow-sm">
           <table className="w-full text-small">
             <thead>
               <tr className="bg-bg-alt border-b border-border">

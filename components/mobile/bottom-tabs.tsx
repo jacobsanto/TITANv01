@@ -2,16 +2,16 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { LayoutDashboard, FileText, Camera, Activity, Menu } from 'lucide-react'
+import { LayoutDashboard, FileText, Download, Activity, Settings } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useT } from '@/lib/i18n/utils'
 
 const tabs = [
   { href: '/dashboard', icon: LayoutDashboard, labelKey: 'dashboard.overview' },
   { href: '/reports', icon: FileText, labelKey: 'reports.title' },
-  { href: '/ocr', icon: Camera, labelKey: 'common.upload', isCenter: true },
+  { href: '/export', icon: Download, labelKey: 'common.export', isCenter: true },
   { href: '/monitoring', icon: Activity, labelKey: 'monitoring.title' },
-  { href: '/config', icon: Menu, labelKey: 'common.settings' },
+  { href: '/config', icon: Settings, labelKey: 'config.title' },
 ]
 
 export function BottomTabs() {

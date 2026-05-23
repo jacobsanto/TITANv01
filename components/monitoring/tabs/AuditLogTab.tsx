@@ -54,7 +54,7 @@ export function AuditLogTab({ orgId }: AuditLogTabProps) {
         <span className="text-small text-fg-tertiary">{total.toLocaleString('el-GR')} {t('monitoring.audit_log').toLowerCase()}</span>
       </div>
 
-      <div className="rounded-xl border border-border overflow-hidden bg-bg-surface shadow-sm">
+      <div className="rounded-xl border border-border overflow-x-auto bg-bg-surface shadow-sm">
         <table className="w-full text-small">
           <thead>
             <tr className="bg-bg-alt border-b border-border">

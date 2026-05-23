@@ -87,7 +87,7 @@ export function MisfiledTab({ orgId, setupId }: MisfiledTabProps) {
     <div className="flex flex-col gap-5 max-w-4xl">
       <div>
         <p className="text-small text-fg-secondary">
-          Βρίσκει τιμολόγια που έχουν αρχειοθετηθεί σε λάθος φάκελο και τα μεταφέρει στη σωστή τοποθεσία.
+          {t('drive.misfiled_description')}
         </p>
       </div>
 
@@ -106,7 +106,7 @@ export function MisfiledTab({ orgId, setupId }: MisfiledTabProps) {
 
         {result && (
           <span className="ml-auto text-[12px] text-fg-tertiary">
-            {result.total_checked.toLocaleString('el-GR')} invoices checked
+            {result.total_checked.toLocaleString('el-GR')} {t('drive.invoices_checked')}
           </span>
         )}
       </div>
@@ -115,12 +115,12 @@ export function MisfiledTab({ orgId, setupId }: MisfiledTabProps) {
 
       {state === 'done' && misfiled.length === 0 && (
         <div className="rounded-xl border border-success/20 bg-success/5 p-8 text-center text-fg-secondary text-small">
-          Όλα τα τιμολόγια είναι σωστά αρχειοθετημένα.
+          {t('drive.misfiled_all_correct')}
         </div>
       )}
 
       {misfiled.length > 0 && (
-        <div className="rounded-xl border border-border overflow-hidden bg-bg-surface shadow-sm">
+        <div className="rounded-xl border border-border overflow-x-auto bg-bg-surface shadow-sm">
           <table className="w-full text-small">
             <thead>
               <tr className="bg-bg-alt border-b border-border">
@@ -129,8 +129,8 @@ export function MisfiledTab({ orgId, setupId }: MisfiledTabProps) {
                 </th>
                 <th className="text-left px-4 py-3 text-fg-tertiary font-sans font-medium text-[11px] uppercase tracking-wider">{t('dashboard.invoice_number')}</th>
                 <th className="text-left px-4 py-3 text-fg-tertiary font-sans font-medium text-[11px] uppercase tracking-wider">{t('common.company')}</th>
-                <th className="text-left px-4 py-3 text-fg-tertiary font-sans font-medium text-[11px] uppercase tracking-wider">Current Path</th>
-                <th className="text-left px-4 py-3 text-fg-tertiary font-sans font-medium text-[11px] uppercase tracking-wider">Expected Path</th>
+                <th className="text-left px-4 py-3 text-fg-tertiary font-sans font-medium text-[11px] uppercase tracking-wider">{t('drive.current_path')}</th>
+                <th className="text-left px-4 py-3 text-fg-tertiary font-sans font-medium text-[11px] uppercase tracking-wider">{t('drive.expected_path')}</th>
                 <th className="text-right px-4 py-3"></th>
               </tr>
             </thead>

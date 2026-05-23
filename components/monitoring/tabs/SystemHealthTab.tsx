@@ -81,12 +81,12 @@ export function SystemHealthTab({ orgId, setupId }: SystemHealthTabProps) {
           : <XCircle size={20} className="text-error flex-shrink-0" />}
         <div>
           <p className="font-sans font-semibold text-fg-primary">
-            {isHealthy ? 'Operational' : isDegraded ? 'Degraded' : 'Issues Detected'}
+            {isHealthy ? t('monitoring.operational') : isDegraded ? t('monitoring.degraded') : t('monitoring.issues_detected')}
           </p>
           <p className="text-small text-fg-secondary">{t('monitoring.system_health')}</p>
         </div>
         <Badge variant={isHealthy ? 'success' : isDegraded ? 'warning' : 'error'} className="ml-auto">
-          {isHealthy ? 'OK' : isDegraded ? 'Degraded' : 'Error'}
+          {isHealthy ? t('common.ok') : isDegraded ? t('monitoring.degraded') : t('common.error')}
         </Badge>
       </div>
 

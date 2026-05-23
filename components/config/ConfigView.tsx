@@ -63,9 +63,9 @@ export function ConfigView() {
 
   return (
     <div className="flex flex-col min-h-full">
-      {/* Page header */}
+      {/* Desktop header */}
       <div
-        className="sticky top-0 z-10 flex items-center px-6 border-b border-border bg-bg-surface"
+        className="hidden md:flex sticky top-0 z-10 items-center px-6 border-b border-border bg-bg-surface"
         style={{ height: 'var(--header)' }}
       >
         <h1 className="font-sans font-bold text-fg-primary" style={{ fontSize: 20 }}>
@@ -73,10 +73,27 @@ export function ConfigView() {
         </h1>
       </div>
 
+      {/* Mobile horizontal tab scroll */}
+      <nav className="flex md:hidden overflow-x-auto border-b border-border bg-bg-alt px-2 py-1 gap-1 flex-shrink-0 scrollbar-none">
+        {TABS.map((tab) => (
+          <button
+            key={tab.key}
+            onClick={() => setActiveTab(tab.key)}
+            className={`flex-shrink-0 px-3 py-2 rounded-lg text-small font-sans font-medium transition-colors whitespace-nowrap ${
+              activeTab === tab.key
+                ? 'bg-primary text-primary-fg'
+                : 'text-fg-secondary hover:text-fg-primary hover:bg-bg-surface'
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </nav>
+
       <div className="flex flex-1 overflow-hidden">
-        {/* Vertical tab sidebar */}
+        {/* Desktop vertical tab sidebar */}
         <nav
-          className="flex-shrink-0 border-r border-border bg-bg-alt overflow-y-auto py-3"
+          className="hidden md:flex flex-col flex-shrink-0 border-r border-border bg-bg-alt overflow-y-auto py-3"
           style={{ width: 200 }}
         >
           {TABS.map((tab) => (
@@ -95,7 +112,7 @@ export function ConfigView() {
         </nav>
 
         {/* Tab content */}
-        <div className="flex-1 overflow-y-auto p-6">
+        <div className="flex-1 overflow-y-auto p-4 md:p-6">
           {activeTab === 'global' && <GlobalSettingsTab orgId={orgId} setupId={setupId} />}
           {activeTab === 'companies' && <CompaniesTab orgId={orgId} setupId={setupId} />}
           {activeTab === 'bank_rules' && <BankRulesTab orgId={orgId} setupId={setupId} />}

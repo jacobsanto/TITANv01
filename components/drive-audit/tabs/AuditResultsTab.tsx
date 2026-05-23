@@ -115,7 +115,7 @@ export function AuditResultsTab({ orgId, setupId }: AuditResultsTabProps) {
 
         {result && (
           <span className="ml-auto text-small text-fg-tertiary">
-            {result.files_checked.toLocaleString('el-GR')} files · {result.companies_checked} companies
+            {result.files_checked.toLocaleString('el-GR')} {t('common.files')} · {result.companies_checked} {t('common.companies')}
             {result.audited_at && ` · ${new Date(result.audited_at).toLocaleString('el-GR', { dateStyle: 'short', timeStyle: 'short' })}`}
           </span>
         )}
@@ -128,13 +128,13 @@ export function AuditResultsTab({ orgId, setupId }: AuditResultsTabProps) {
       {state === 'auditing' && (
         <div className="flex flex-col items-center gap-3 py-12">
           <Loader2 size={28} className="animate-spin text-fg-tertiary" />
-          <p className="text-small text-fg-tertiary">Έλεγχος Drive...</p>
+          <p className="text-small text-fg-tertiary">{t('drive.audit_in_progress')}</p>
         </div>
       )}
 
       {state === 'done' && issues.length === 0 && (
         <div className="rounded-xl border border-success/20 bg-success/5 p-8 text-center text-fg-secondary text-small">
-          Δεν βρέθηκαν προβλήματα. Το Drive είναι σε καλή κατάσταση.
+          {t('drive.no_issues')}
         </div>
       )}
 
@@ -143,7 +143,7 @@ export function AuditResultsTab({ orgId, setupId }: AuditResultsTabProps) {
           {criticalCount > 0 && (
             <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-error/5 border border-error/20 text-error text-small">
               <ShieldAlert size={15} />
-              {criticalCount} critical {t('drive.issues').toLowerCase()}
+              {criticalCount} {t('drive.critical_issues')}
             </div>
           )}
 
@@ -184,7 +184,7 @@ export function AuditResultsTab({ orgId, setupId }: AuditResultsTabProps) {
                       </Button>
                     )}
                     {issue.fixed && (
-                      <Badge variant="success">Fixed</Badge>
+                      <Badge variant="success">{t('common.fixed')}</Badge>
                     )}
                   </div>
                 </div>

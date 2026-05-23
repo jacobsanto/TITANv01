@@ -48,7 +48,7 @@ export function DriveCleanupView() {
 
   return (
     <div className="flex flex-col min-h-full">
-      <div className="sticky top-0 z-10 flex items-center justify-between px-6 border-b border-border bg-bg-surface" style={{ height: 'var(--header)' }}>
+      <div className="hidden md:flex sticky top-0 z-10 items-center justify-between px-6 border-b border-border bg-bg-surface" style={{ height: 'var(--header)' }}>
         <h1 className="font-sans font-bold text-fg-primary" style={{ fontSize: 20 }}>{t('drive.cleanup')}</h1>
         {activeTab !== 'merge' && (
           <Button variant="primary" size="sm" onClick={handleScan} disabled={scanning}>

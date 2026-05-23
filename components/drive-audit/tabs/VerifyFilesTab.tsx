@@ -41,9 +41,9 @@ function statusVariant(s: string): 'success' | 'error' | 'warning' | 'info' {
 
 function statusLabel(s: string, t: (k: string) => string): string {
   if (s === 'ok') return t('common.success')
-  if (s === 'missing_folder') return 'Missing folder'
-  if (s === 'missing_files') return 'Missing files'
-  if (s === 'permission_error') return 'Permission error'
+  if (s === 'missing_folder') return t('drive.verify_missing_folder')
+  if (s === 'missing_files') return t('drive.verify_missing_files')
+  if (s === 'permission_error') return t('drive.verify_permission_error')
   return s
 }
 
@@ -77,7 +77,7 @@ export function VerifyFilesTab({ orgId, setupId }: VerifyFilesTabProps) {
     <div className="flex flex-col gap-5 max-w-4xl">
       <div>
         <p className="text-small text-fg-secondary">
-          Ελέγχει ότι κάθε εταιρεία έχει τους σωστούς φακέλους Drive και τα αρχεία είναι προσβάσιμα.
+          {t('drive.verify_description')}
         </p>
       </div>
 
@@ -91,7 +91,7 @@ export function VerifyFilesTab({ orgId, setupId }: VerifyFilesTabProps) {
 
         {result && (
           <span className="ml-auto text-[12px] text-fg-tertiary">
-            {result.ok_count}/{result.total_companies} companies OK
+            {result.ok_count}/{result.total_companies} {t('drive.verify_companies_ok')}
             {result.verified_at && ` · ${new Date(result.verified_at).toLocaleString('el-GR', { dateStyle: 'short', timeStyle: 'short' })}`}
           </span>
         )}
@@ -104,13 +104,13 @@ export function VerifyFilesTab({ orgId, setupId }: VerifyFilesTabProps) {
       {state === 'verifying' && (
         <div className="flex flex-col items-center gap-3 py-12">
           <Loader2 size={28} className="animate-spin text-fg-tertiary" />
-          <p className="text-small text-fg-tertiary">Επαλήθευση αρχείων εταιρειών...</p>
+          <p className="text-small text-fg-tertiary">{t('drive.verifying')}</p>
         </div>
       )}
 
       {state === 'done' && companies.length === 0 && (
         <div className="rounded-xl border border-border bg-bg-surface p-8 text-center text-fg-tertiary text-small">
-          Δεν βρέθηκαν εταιρείες.
+          {t('common.no_companies_found')}
         </div>
       )}
 
@@ -119,20 +119,20 @@ export function VerifyFilesTab({ orgId, setupId }: VerifyFilesTabProps) {
           {result && result.issue_count === 0 && (
             <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-success/5 border border-success/20 text-success text-small">
               <CheckCircle2 size={15} />
-              Όλες οι εταιρείες έχουν σωστή δομή φακέλων.
+              {t('drive.verify_all_ok')}
             </div>
           )}
 
           {result && result.issue_count > 0 && (
             <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-warning/5 border border-warning/20 text-warning text-small">
               <AlertTriangle size={15} />
-              {result.issue_count} {result.issue_count === 1 ? 'εταιρεία' : 'εταιρείες'} με προβλήματα
+              {result.issue_count} {t('drive.verify_companies_with_issues')}
             </div>
           )}
 
           {issueCompanies.length > 0 && (
             <div className="flex flex-col gap-2">
-              <p className="text-[11px] text-fg-tertiary uppercase tracking-wider">Προβλήματα</p>
+              <p className="text-[11px] text-fg-tertiary uppercase tracking-wider">{t('drive.verify_issues')}</p>
               {issueCompanies.map((company) => (
                 <div
                   key={company.company_id}
@@ -167,7 +167,7 @@ export function VerifyFilesTab({ orgId, setupId }: VerifyFilesTabProps) {
                   </div>
                   {company.files_checked > 0 && (
                     <div className="flex items-center gap-2 text-[11px] text-fg-tertiary">
-                      <span>{company.files_ok}/{company.files_checked} files OK</span>
+                      <span>{company.files_ok}/{company.files_checked} {t('drive.verify_files_ok')}</span>
                       {company.folder_id && <span className="font-mono">{company.folder_id.slice(0, 12)}…</span>}
                     </div>
                   )}
@@ -177,12 +177,12 @@ export function VerifyFilesTab({ orgId, setupId }: VerifyFilesTabProps) {
           )}
 
           {okCompanies.length > 0 && (
-            <div className="rounded-xl border border-border overflow-hidden bg-bg-surface shadow-sm">
+            <div className="rounded-xl border border-border overflow-x-auto bg-bg-surface shadow-sm">
               <table className="w-full text-small">
                 <thead>
                   <tr className="bg-bg-alt border-b border-border">
                     <th className="text-left px-4 py-3 text-fg-tertiary font-sans font-medium text-[11px] uppercase tracking-wider">{t('common.company')}</th>
-                    <th className="text-left px-4 py-3 text-fg-tertiary font-sans font-medium text-[11px] uppercase tracking-wider">Files</th>
+                    <th className="text-left px-4 py-3 text-fg-tertiary font-sans font-medium text-[11px] uppercase tracking-wider">{t('common.files')}</th>
                     <th className="text-left px-4 py-3 text-fg-tertiary font-sans font-medium text-[11px] uppercase tracking-wider">{t('common.status')}</th>
                     <th className="text-right px-4 py-3"></th>
                   </tr>

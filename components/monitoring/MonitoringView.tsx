@@ -37,7 +37,7 @@ export function MonitoringView() {
 
   return (
     <div className="flex flex-col min-h-full">
-      <div className="sticky top-0 z-10 flex items-center px-6 border-b border-border bg-bg-surface" style={{ height: 'var(--header)' }}>
+      <div className="hidden md:flex sticky top-0 z-10 items-center px-6 border-b border-border bg-bg-surface" style={{ height: 'var(--header)' }}>
         <h1 className="font-sans font-bold text-fg-primary" style={{ fontSize: 20 }}>{t('monitoring.title')}</h1>
       </div>
 
