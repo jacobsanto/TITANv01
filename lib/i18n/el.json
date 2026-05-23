@@ -332,7 +332,9 @@
     "fix": "Διόρθωση",
     "fix_all": "Διόρθωση Όλων",
     "per_company": "Ανά Εταιρεία",
-    "verification_status": "Κατάσταση Επαλήθευσης"
+    "verification_status": "Κατάσταση Επαλήθευσης",
+    "audit_results": "Αποτελέσματα Ελέγχου",
+    "misfiled": "Λανθασμένη Αρχειοθέτηση"
   },
   "profile": {
     "title": "Προφίλ",
