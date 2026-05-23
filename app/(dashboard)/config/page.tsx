@@ -1,3 +1,7 @@
+export const dynamic = 'force-dynamic'
+
+import { ConfigView } from '@/components/config/ConfigView'
+
 export default function ConfigPage() {
-  return null
+  return <ConfigView />
 }
