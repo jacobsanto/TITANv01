@@ -115,7 +115,7 @@ export function MembersView() {
 
   return (
     <div className="flex flex-col min-h-full">
-      <div className="sticky top-0 z-10 flex items-center justify-between px-6 border-b border-border bg-bg-surface" style={{ height: 'var(--header)' }}>
+      <div className="hidden md:flex sticky top-0 z-10 items-center justify-between px-6 border-b border-border bg-bg-surface" style={{ height: 'var(--header)' }}>
         <h1 className="font-sans font-bold text-fg-primary" style={{ fontSize: 20 }}>{t('members.title')}</h1>
         {isAdmin && (
           <Button variant="primary" size="sm" onClick={() => setShowInvite(true)}>
@@ -133,8 +133,8 @@ export function MembersView() {
         {loading ? (
           <div className="flex items-center justify-center py-16"><Loader2 size={28} className="animate-spin text-fg-tertiary" /></div>
         ) : (
-          <div className="rounded-xl border border-border overflow-hidden bg-bg-surface shadow-sm">
-            <table className="w-full text-small">
+          <div className="rounded-xl border border-border overflow-x-auto bg-bg-surface shadow-sm">
+            <table className="w-full text-small min-w-[480px]">
               <thead>
                 <tr className="bg-bg-alt border-b border-border">
                   <th className="text-left px-4 py-3 text-fg-tertiary font-sans font-medium text-[11px] uppercase tracking-wider">{t('common.user')}</th>

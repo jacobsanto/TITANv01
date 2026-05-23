@@ -75,9 +75,9 @@ export function DashboardView() {
 
   return (
     <div className="flex flex-col min-h-full">
-      {/* Page header */}
+      {/* Desktop header */}
       <div
-        className="sticky top-0 z-10 flex items-center justify-between px-6 border-b border-border bg-bg-surface"
+        className="hidden md:flex sticky top-0 z-10 items-center justify-between px-6 border-b border-border bg-bg-surface"
         style={{ height: 'var(--header)' }}
       >
         <h1 className="font-sans font-bold text-fg-primary" style={{ fontSize: 20 }}>
@@ -85,7 +85,6 @@ export function DashboardView() {
         </h1>
 
         <div className="flex items-center gap-3">
-          {/* Company selector */}
           {companies && companies.length > 1 && (
             <select
               value={selectedCompany}
@@ -98,7 +97,6 @@ export function DashboardView() {
               ))}
             </select>
           )}
-
           <button
             onClick={() => qc.invalidateQueries()}
             className="p-2 rounded-lg text-fg-tertiary hover:text-fg-primary hover:bg-bg-alt transition-colors"
@@ -106,9 +104,32 @@ export function DashboardView() {
           >
             <RefreshCw size={16} />
           </button>
-
           <GmailFetchMenu orgId={orgId} setupId={setupId} />
         </div>
+      </div>
+
+      {/* Mobile controls bar */}
+      <div className="flex md:hidden items-center gap-2 px-4 py-2.5 border-b border-border bg-bg-surface">
+        {companies && companies.length > 1 && (
+          <select
+            value={selectedCompany}
+            onChange={(e) => setSelectedCompany(e.target.value)}
+            className="flex-1 h-9 px-3 rounded-lg border border-border text-small text-fg-primary bg-bg-surface focus:outline-none"
+          >
+            <option value="all">{t('common.all')}</option>
+            {companies.map((c) => (
+              <option key={c.id} value={c.id}>{c.name}</option>
+            ))}
+          </select>
+        )}
+        <button
+          onClick={() => qc.invalidateQueries()}
+          className="p-2 rounded-lg text-fg-tertiary hover:text-fg-primary hover:bg-bg-alt transition-colors flex-shrink-0"
+          title={t('common.refresh')}
+        >
+          <RefreshCw size={16} />
+        </button>
+        <GmailFetchMenu orgId={orgId} setupId={setupId} />
       </div>
 
       {/* Tab bar */}

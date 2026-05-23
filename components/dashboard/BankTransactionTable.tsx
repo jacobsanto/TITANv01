@@ -76,7 +76,7 @@ export function BankTransactionTable({ orgId, setupId, companyId }: BankTransact
         <span className="text-small text-fg-tertiary">{total.toLocaleString('el-GR')} {t('dashboard.bank_transactions').toLowerCase()}</span>
       </div>
 
-      <div className="rounded-xl border border-border overflow-hidden bg-bg-surface shadow-sm">
+      <div className="rounded-xl border border-border overflow-x-auto bg-bg-surface shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full text-small">
             <thead>
